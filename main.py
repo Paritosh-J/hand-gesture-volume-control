@@ -24,7 +24,7 @@ volMax = volRange[1]
 
 
 def main():
-    # capture video from the camera (0)
+    # turn on the camera (0) 7 start capture
     video = cv2.VideoCapture(0, cv2.CAP_DSHOW)
     # setting the captured video's dimensions
     # wCam, hCam = 1920, 1080
@@ -50,7 +50,7 @@ def main():
                        cv2.FILLED)  # draw circle @ thumb tip
             cv2.circle(frame, (x2, y2), 15, (0, 255, 0),
                        cv2.FILLED)  # draw circle @ index tip
-            cv2.line(frame, (x1, y1), (x2, y2), (7, 0, 212), 3, 10)
+            cv2.line(frame, (x1, y1), (x2, y2), (7, 0, 212), 3, 5)
 
             # midpt. for thumb-index joining line
             cx, cy = (x1 + x2) // 2, (y1 + y2) // 2
@@ -77,13 +77,16 @@ def main():
                 cv2.circle(frame, (cx, cy), 15, (250, 0, 0),
                            cv2.FILLED)  # blue circle
 
-        cv2.putText(frame, "Press 'q' to exit", (25, 450), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 0), 2)  # display quit key on o/p window
-        cv2.imshow('=== Hand Gesture Volume Controller ===', frame)  # open window for showing the o/p
+        cv2.putText(frame, "Press 'q' to exit", (25, 450), cv2.FONT_HERSHEY_SIMPLEX,
+                    1, (255, 255, 0), 2)  # display quit key on o/p window
+        cv2.imshow('=== Hand Gesture Volume Controller ===',
+                   frame)  # open window for showing the o/p
 
         # escape key (q)
         if cv2.waitKey(1) == ord('q'):
             break
 
+    video.release()
     cv2.destroyAllWindows()
 
 
