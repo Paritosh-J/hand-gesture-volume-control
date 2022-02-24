@@ -45,8 +45,7 @@ class handDetector():
                 self.LmarkList.append([LmarkId, cx, cy])
 
                 if draw:
-                    if LmarkId in [4, 8, 12, 16, 20]:  # id of thumb tip
-                        # draw circle for thumb tip
+                    if LmarkId in [4, 8, 12, 16, 20]:  # ids of all finger tips
                         cv2.circle(frame, (cx, cy), 15,
                                    (84, 245, 66), cv2.FILLED)
         return self.LmarkList
