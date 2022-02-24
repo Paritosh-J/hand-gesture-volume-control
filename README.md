@@ -1,6 +1,6 @@
 # Hand Gesture Volume Control
 ## What it does
-System volume control using Hand Detection by MediaPipe & OpenCV libraries for Python
+Controls the master volume of the computer
 
 ## How it works
 * Detects the **Index & Thumb fingers**
